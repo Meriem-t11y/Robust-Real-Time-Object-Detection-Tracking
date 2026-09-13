@@ -3,6 +3,8 @@
 
 <p align="center"> <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white"> <img src="https://img.shields.io/badge/PyTorch-Deep%20Learning-ee4c2c?logo=pytorch&logoColor=white"> <img src="https://img.shields.io/badge/Ultralytics-YOLO-111111?logo=yolo&logoColor=white"> <img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?logo=opencv&logoColor=white"> <img src="https://img.shields.io/badge/NumPy-Data%20Processing-013243?logo=numpy&logoColor=white"> <img src="https://img.shields.io/badge/Matplotlib-Visualization-11557c"> </p>
 ---
+
+
 ## Overview
 
 This project develops a **robust computer vision pipeline for object detection and multi-object tracking in challenging aerial environments**.
