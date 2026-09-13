@@ -22,38 +22,23 @@ The complete pipeline covers **data preparation, model training, evaluation, err
 ## Pipeline
 ```mermaid
 flowchart TD
-    In[Input Image] --> Enc1[Encoder Block 1]
-    
-    subgraph Contracting_Path ["Contracting Path (Encoder)"]
-        Enc1 -->|Downsample| Enc2[Encoder Block 2]
-        Enc2 -->|Downsample| Enc3[Encoder Block 3]
-    end
-
-    Enc3 -->|Downsample| Bottleneck[Bottleneck]
-
-    subgraph Expanding_Path ["Expanding Path (Decoder)"]
-        Dec3 -->|Upsample| Dec2[Decoder Block 2]
-        Dec2 -->|Upsample| Dec1[Decoder Block 1]
-    end
-
-    Bottleneck -->|Upsample| Dec3[Decoder Block 3]
-    Dec1 --> Out[Segmentation Mask]
-
-    %% Skip Connections
-    Enc1 -.->|Skip Connection| Dec1
-    Enc2 -.->|Skip Connection| Dec2
-    Enc3 -.->|Skip Connection| Dec3
+    A[VisDrone Dataset] --> B[Data Preparation]
+    B --> C[YOLO26n Model]
+    C --> D[Object Detection]
+    D --> E[Model Evaluation]
+    E --> F[Error Analysis]
+    F --> G[ByteTrack]
+    G --> H[Multi-Object Tracking]
 
     %% Styling
-    style In fill:#1a202c,stroke:#e2e8f0,color:#fff
-    style Out fill:#22c55e,stroke:#4ade80,color:#fff
-    style Bottleneck fill:#8b5cf6,stroke:#c084fc,color:#fff
-    style Enc1 fill:#0284c7,stroke:#38bdf8,color:#fff
-    style Enc2 fill:#0284c7,stroke:#38bdf8,color:#fff
-    style Enc3 fill:#0284c7,stroke:#38bdf8,color:#fff
-    style Dec1 fill:#0d9488,stroke:#2dd4bf,color:#fff
-    style Dec2 fill:#0d9488,stroke:#2dd4bf,color:#fff
-    style Dec3 fill:#0d9488,stroke:#2dd4bf,color:#fff
+    style A fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style B fill:#1e293b,stroke:#94a3b8,color:#fff
+    style C fill:#0369a1,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style D fill:#1e293b,stroke:#94a3b8,color:#fff
+    style E fill:#1e293b,stroke:#94a3b8,color:#fff
+    style F fill:#be123c,stroke:#fda4af,color:#fff
+    style G fill:#6d28d9,stroke:#c084fc,stroke-width:2px,color:#fff
+    style H fill:#15803d,stroke:#4ade80,stroke-width:2px,color:#fff
 ```
 ---
 
