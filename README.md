@@ -316,6 +316,5 @@ Possible extensions include:
 ## Author
 
 **Meriem Tafraoui**
-
-AI Engineering Student
-Université Mustapha Stambouli, Mascara, Algeria
+AI Engineering Student 
+• Computer Vision • Deep Learning • Artificial Intelligence  • machine learning
